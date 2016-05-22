@@ -21,79 +21,80 @@ int devideTask(){
 	printf("3)Numbers [%d;%d] devide by %d and %d and %d\n",min, max, num1, num2, num3);
 	
 	do{
-	puts("\nInput 1, 2 or 3:\n");
-	scanf("%d", &choose);
+		puts("\nInput 1, 2 or 3:\n");
+		scanf("%d", &choose);
 
 
-if(choose==1)
-{
-	printf("\n\nFor [%d; %d]:\n\n", min, max);
-	fprintf(result, " For numbers [%d;%d] devide by %d or %d or %d:\n\n",min, max, num1, num2, num3);
-	for(int i=min; i<=max; i++)
-{
-	if(i%num1==0||i%num2==0||i%num3==0)  
-{
-	 count++; printf("%d can devide by one/all numbers, count=%d\n", i, count); 
-	 fprintf(result, "%d can devide by one/all numbers, count=%d\n", i, count); 
-} 
+		if(choose==1)
+		{
+			printf("\n\nFor [%d; %d]:\n\n", min, max);
+			fprintf(result, " For numbers [%d;%d] devide by %d or %d or %d:\n\n",min, max, num1, num2, num3);
+			for(int i=min; i<=max; i++)
+			{
+				if(i%num1==0||i%num2==0||i%num3==0)  
+				{
+	 				count++; //printf("%d can devide by one/all numbers, count=%d\n", i, count); 
+					fprintf(result, "%d can devide by one/all numbers, count=%d\n", i, count); 
+				}	 
     //else { printf("%d can't be devided of one/all of these numbers\n", i); }
-}
-}
+			}
+		}
 
 
 
-if(choose==2)
-{
- printf("\n\nFor [%d; %d]:\n", min, max);
- fprintf(result, " For numbers [%d;%d] devide by only one of these numbers:\n\n", min, max);
-	for(int i=min; i<=max; i++)
-{
-if((i%num1==0)&&(i%num2>0)&&(i%num3>0))  
-{ 
-	count++; printf("%d can devide by %d, count=%d\n", i, num1, count);
-	fprintf(result, "%d can devide by %d, count=%d\n", i, num1, count); 
-} 
-else if((i%num2==0)&&(i%num1>0)&&(i%num3>0))  
-{
-	count++; printf("%d can devide by %d, count=%d\n", i, num2, count); 
-	fprintf(result, "%d can devide by %d, count=%d\n", i, num1, count);
-}  
-else if((i%num3==0)&&(i%num2>0)&&(i%num1>0))   
-{ 
-	count++; printf("%d can devide by %d, count=%d\n", i, num3, count); 
-	fprintf(result, "%d can devide by %d, count=%d\n", i, num1, count);
-}   
+		if(choose==2)
+		{
+ 			printf("\n\nFor [%d; %d]:\n", min, max);
+		 	fprintf(result, " For numbers [%d;%d] devide by only one of these numbers:\n\n", min, max);
+			for(int i=min; i<=max; i++)
+			{
+				if((i%num1==0)&&(i%num2>0)&&(i%num3>0))  
+				{	 
+					count++; //printf("%d can devide by %d, count=%d\n", i, num1, count);
+					fprintf(result, "%d can devide by %d, count=%d\n", i, num1, count); 
+				} 
+				else if((i%num2==0)&&(i%num1>0)&&(i%num3>0))  
+				{
+					count++; //printf("%d can devide by %d, count=%d\n", i, num2, count); 
+					fprintf(result, "%d can devide by %d, count=%d\n", i, num2, count);
+				}  
+				else if((i%num3==0)&&(i%num2>0)&&(i%num1>0))   
+				{ 
+					count++; //printf("%d can devide by %d, count=%d\n", i, num3, count); 
+					fprintf(result, "%d can devide by %d, count=%d\n", i, num3, count);
+				}   
     //else { printf("%d can't be devided of only one number\n", i); }
-}	
-}
+			}	
+		}
 
 
-if(choose==3){
-	printf("\n\nFor [%d; %d]:\n", min, max);
-	fprintf(result, " For numbers [%d;%d] devide by %d and %d and %d:\n\n",min, max, num1, num2, num3);
-	for(int i=min; i<=max; i++)
-{
-	if((i%num1==0)&&(i%num2==0)&&(i%num3==0))  
-{ 
-count++; printf("%d can devide by all numbers, count=%d\n", i, count);
-fprintf(result, "%d can devide by all numbers, count=%d\n", i, count);
-} 
+		if(choose==3){
+			printf("\n\nFor [%d; %d]:\n", min, max);
+			fprintf(result, " For numbers [%d;%d] devide by %d and %d and %d:\n\n",min, max, num1, num2, num3);
+			for(int i=min; i<=max; i++)
+			{
+				if((i%num1==0)&&(i%num2==0)&&(i%num3==0))  
+				{		 
+					count++; //printf("%d can devide by all numbers, count=%d\n", i, count);
+					fprintf(result, "%d can devide by all numbers, count=%d\n", i, count);
+				} 
     //else { printf("%d can't be devided of one/all of these numbers\n", i); }
-}
-}
-}while(choose!=1&&choose!=2&&choose!=3);
-printf("\n In results, %d number(s) can be devided\n\n", count);
-fprintf(result, "\n In results, %d number(s) can be devided\n\n", count);
+			}
+		}
+	
+	}while(choose!=1&&choose!=2&&choose!=3);
+	printf("\n In results, %d number(s) can be devided\n\n", count);
+	fprintf(result, "\n In results, %d number(s) can be devided\n\n", count);
 
 
 
-fclose(result);
+	fclose(result);
 }
 
 
 main(){
 	 devideTask();
-system("PAUSE");
-return 0;
+	system("PAUSE");
+	return 0;
 }
 
